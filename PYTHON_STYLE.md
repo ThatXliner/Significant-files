@@ -5,7 +5,7 @@ This is a file that defines and describes the code style I use. It is placed in 
 ## The style
 
 ### TL;DR
-The ThatXliner code style uses [Black][1] to format code and mostly conforms to the [Google style guide][2](GSG) with the following exceptions:
+The ThatXliner code style uses [Black][1] to format code and mostly conforms to the [Google style guide][2] (GSG) with the following exceptions:
  - The hard line limit is `90` characters. But it is recommended to keep it to `88` characters.
  - It is preferred to use trusty `flake8` instead of opinionated `pylint`. Though, you can choose otherwise if it your preference.
    (I personally like flake8 because it's `pep8` and `pylint` combined)
@@ -44,7 +44,7 @@ Because namespaces rule!
 
 ### Filler statements
 
-TD;DR: First off, this section is short. Second, just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in
+TD;DR: First off, this section is short. Second, just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in.
 
 The ellipsis (`...`) and the `pass` statement are the two main filler statements in python. The golden rule is to use the ellipsis in statements you are planning to fill in later whereas you use `pass` for areas you are not planning to fill.
 
