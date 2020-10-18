@@ -44,9 +44,9 @@ Because namespaces rule!
 
 ### Filler statements
 
-TD;DR: First off, this section is short. Second, just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in.
+TL;DR: First off, this section is short. Second, just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in.
 
-The ellipsis (`...`) and the `pass` statement are the two main filler statements in python. The golden rule is to use the ellipsis in statements you are planning to fill in later whereas you use `pass` for areas you are not planning to fill.
+The ellipsis (`...`) and the `pass` statement are the two main filler statements in python. The golden rule is to use the ellipsis in statements you are planning to fill in later whereas you use `pass` for areas you are not planning to fill (e.g. abstract methods or mypy type stubs).
 
 Example:
 
@@ -71,6 +71,95 @@ class AbstractClass(metaclass=abc.ABCMeta):
 
 Because we're not gonna have ambiguity over these two wonder statements.
 
+### Comments
+
+TL;DR: Use `#` for comments! (This is for you, @KomodoKode). Use codetags defined in [PEP 350][3] such as `NOTE` or `OPTIMIZE`.
+
+Use the `#` for comments and `"""` for docstrings (`R"""` for `r`aw docstrings).
+
+Codetags, such as `NOTE`, `OPTIMIZE`, `BUG`, `FIXME`, etc, should have the author's username appended to them. From this:
+
+```python
+foo = 10
+bar = foo + 12
+# -snip-
+print(bar)
+```
+
+to this:
+
+```python
+foo = 10
+bar = foo + 12
+# -snip-
+print(bar)  # NOTE(ThatXliner): bar is foo + 12
+```
+
+**Why?**
+
+Codetags are awesome for small comments! And we need to see who wrote them because then we can discuss with them.
+
+### Strings
+
+TL;DR: use `f`-strings for string interpolation (if you can), `r`-strings for regexes, `R`-strings for raw strings, and use implicit string concatenation for concatenating long strings.
+
+The general rule for string interpolation is that if you can't use `f`-strings, use `.format`. Like this:
+
+```python
+name = "John Doe"
+age = 970
+print(f"name: {name}, age: {age}")
+# OUT: name: John Doe, age: 970
+```
+or this (if you have those rare cases of having backslashes in string interpolation):
+
+```python
+favorite_ascii_character = "\\"
+print("My favorite character is '{}'".format(favorite_ascii_character))
+# OUT: My favorite character is '\'
+```
+
+**Why?**
+
+Personally, I think that `f`-strings are the *cleanest* way to interpolate strings.
+
+Compare this:
+```python
+name = "John Doe"
+age = 970
+print(f"name: {name}, age: {age}")
+# OUT: name: John Doe, age: 970
+```
+to this:
+```python
+name = "John Doe"
+age = 970
+print("name: {}, age: {}".format(name, age))
+# OUT: name: John Doe, age: 970
+```
+this:
+```python
+name = "John Doe"
+age = 970
+print("name: %s, age: %s" % (name, age))
+# OUT: name: John Doe, age: 970
+```
+this:
+```python
+name = "John Doe"
+age = 970
+print("name: %(name)s, age: %(age)s")
+# OUT: name: John Doe, age: 970
+```
+or this:
+```python
+name = "John Doe"
+age = 970
+print("name: " + name + ", age: " + age)
+# OUT: name: John Doe, age: 970
+```
+
 
 [1]: https://github.com/psf/black "Black's GitHub repo"
 [2]: https://google.github.io/styleguide/pyguide.html "Google's python styleguide"
+[3]: https://www.python.org/dev/peps/pep-0350/ "Code tags"
