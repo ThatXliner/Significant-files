@@ -15,10 +15,12 @@ The ThatXliner code style uses [Black][1] to format code and mostly conforms to 
 
 This file is designed to be shorter than the GSG. Because, seriously, who wants to read *that*. Unlike the GSG, this styleguide will be more flexible and shorter, so use your discretion. If you have any questions, please feel free to ask by making an issue.
 
+Also, **do not freak out about migration**. I have made setup.cfg and pyproject.toml files designed for this. Just use them. Relax.
+
 
 ### Imports
 
-TL;DR: Follow the GSG for this one. Namespaces rule. `import`s from `typing` and `six.moves` are exceptions.
+TL;DR: Always `import` something. Namespaces rule. `import`s from `typing` and `six.moves` are exceptions.
 
 From the [GSG](https://google.github.io/styleguide/pyguide.html#224-decision):
 
@@ -38,13 +40,15 @@ Do not use relative names in imports. Even if the module is in the same package,
 
 Imports from the typing module and the six.moves module are exempt from this rule."
 
+Editing the [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path) should be a last resort (e.g. Importing a module from a folder above).
+
 **Why?**
 
-Because namespaces rule!
+Because namespaces rule! And it's because ugly/unorganized import statements are bad. Plus, they may contribute to ambiguity, recursive imports, and a whole lot of bugs that we don't want to encounter.
 
 ### Filler statements
 
-TL;DR: First off, this section is short. Second, just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in.
+TL;DR: Just use `...` if you need to fill something in later. Use `pass` if you don't intend to fill it in.
 
 The ellipsis (`...`) and the `pass` statement are the two main filler statements in python. The golden rule is to use the ellipsis in statements you are planning to fill in later whereas you use `pass` for areas you are not planning to fill (e.g. abstract methods or mypy type stubs).
 
@@ -192,6 +196,10 @@ If your code goes past the 90 character limit, your code is too complicated. Try
 
 When writing code, 79 characters may make your code look squished. 90 characters makes most files optimally smaller. It also allows for some nice one-liners such as list comprehensons, etc.
 
+### Type hints
+TL;DR: Use them.
+
+Type hints
 
 [1]: https://github.com/psf/black "Black's GitHub repo"
 [2]: https://google.github.io/styleguide/pyguide.html "Google's python styleguide"
