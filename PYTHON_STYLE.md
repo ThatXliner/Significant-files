@@ -158,6 +158,39 @@ age = 970
 print("name: " + name + ", age: " + age)
 # OUT: name: John Doe, age: 970
 ```
+### Line Length
+TL;DR:  Unlike PEP8, the hard limit for all lines is 90 characters wide (which is also contrasting to black's documentation). The recommended limit is 88 characters.
+
+The line length limit is 90 characters.
+
+When writing docstrings, it is recommended to set your editor's soft wrap setting at 90 and press enter or return at every soft line break. That'll help you wrap strings easier. But it won't really help when you plan to expand them (e.g. docstrings) in the future for it may not be the most optimal setting. So use your own discretion.
+
+If your string is a one liner (meaning it won't have any newlines) you should split it up via implicit string concatenation. For example, change this:
+```python
+print("Some super-duper long string that will go over the recommended line limit of 80 to 88 characters. This is definitely going to go past the 90 character hard limit.")
+```
+to this:
+```python
+print("Some super-duper long string that will go over the recommended line limit of 80 "
+"to 88 characters. This is definitely going to go past the 90 character hard limit.")
+```
+And if you have f-strings, you can just put an f in front of every separate string. It'll concatenate normally, without any errors. The same goes for raw strings. Comments should be wrapped around as well. Turn something like this:
+```python
+# (90 characters is the width of this comment)============================================
+# NOTE: Wrap this comment so that it won't go past the 90 character hard limit. So yeah, this is a long comment
+```
+into this:
+```python
+# (90 characters is the width of this comment)============================================
+# NOTE: Wrap this comment so that it won't go past the 90 character hard limit. So yeah,
+# this is a long comment
+```
+
+If your code goes past the 90 character limit, your code is too complicated. Try to simplify it by using built-in functions, separate it into functions, use python's itertools, or use recursion instead.
+
+**Why?**
+
+When writing code, 79 characters may make your code look squished. 90 characters makes most files optimally smaller. It also allows for some nice one-liners such as list comprehensons, etc.
 
 
 [1]: https://github.com/psf/black "Black's GitHub repo"
