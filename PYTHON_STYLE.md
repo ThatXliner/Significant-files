@@ -6,10 +6,9 @@ This is a file that defines and describes the code style I use. It is placed in 
 
 ### TL;DR
 The ThatXliner code style uses [Black][1] to format code and mostly conforms to the [Google style guide][2] (GSG) with the following exceptions:
- - The hard line limit is `90` characters. But it is recommended to keep it to `88` characters.
- - It is preferred to use trusty `flake8` instead of opinionated `pylint`. Though, you can choose otherwise if it your preference.
-   (I personally like flake8 because it's `pep8` and `pylint` combined)
- - Use `Black` over `YAPF` because it is more determistic. (If `YAPF` was determistic, I would be using it right now!)
+ - The hard line limit is `90` characters. But it is recommended to keep it to `88` characters. 
+ - Use `Black` over `YAPF` because it is more determistic and has less options. (If `YAPF` was determistic, I would be using it right now!)
+ - Use NumPy-style docstrings
 
 **NOTE: I have not *actually read* the Google style guide (GSG). Therefore, I may not agree on some, or even most, parts of it. I just use the GSG as a starter because this file is still WIP.**
 
