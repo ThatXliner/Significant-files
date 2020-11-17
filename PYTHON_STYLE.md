@@ -144,6 +144,12 @@ It's a good practice. Use them if you can. Type hints are to python as TypeScrip
 
 ### Assert statements
 
+TK.
+
+### The rest
+
+Let Black, flake8, isort, and Pylint scream at you. Personally, I only use Pylint for refactoring, etc. Flake8 is my first choice.
+
 [1]: https://github.com/psf/black "Black's GitHub repo"
 [2]: https://google.github.io/styleguide/pyguide.html "Google's python styleguide"
 [3]: https://www.python.org/dev/peps/pep-0350/ "Code tags"
