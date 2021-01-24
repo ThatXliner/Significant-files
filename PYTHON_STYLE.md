@@ -42,7 +42,7 @@ echo.EchoFilter(input, output, delay=0.7, atten=4)
 
 Do not use relative names in imports. Even if the module is in the same package, use the full package name. This helps prevent unintentionally importing a package twice.
 
-Imports from the `typing` module and the `six.moves` module are exempt from this rule.
+Imports from the `typing` module, `collections` module, `pathlib` module, `abc` module, and the `six.moves` module are exempt from this rule.
 
 All new code should import each module by its full package name.
 
