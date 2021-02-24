@@ -3,7 +3,7 @@
 ## Why
 This code style is designed to be super short and concise yet still allowing space for developers to flow with their own, unique, artistic style.
 
-**Line length** will be determined by [Pylint][3]'s default configuration.
+**Line length** will be determined by [Pylint][3]'s default configuration (100).
 
 ## The style
 
@@ -22,7 +22,16 @@ Use `...` for code that will be filled in later.
 Use `pass` for everything else (e.g. abstract methods, type stubs, etc).
 
 ### Comment/docstrings
-...
+Use [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) unless you're documenting utility code or modules.
+
+For utility code, try to keep the docstrings short (i.e. only describing what it does).
+
+For modules, give one line of brief description and (optionally) other lines of long description.
+
+### Name style
+
+While, Pylint will cover this, also try to follow the [naming-cheetsheet](https://github.com/tigthor/naming-cheatsheet) guide.
+
 ### Import style
 
 
@@ -42,7 +51,7 @@ echo.EchoFilter(input, output, delay=0.7, atten=4)
 
 Do not use relative names in imports. Even if the module is in the same package, use the full package name. This helps prevent unintentionally importing a package twice.
 
-Imports from the `typing` module, `collections` module, `pathlib` module, `abc` module, and the `six.moves` module are exempt from this rule.
+Imports from the `typing` module, `collections` module, `pathlib` module, and the `six.moves` module are exempt from this rule.
 
 All new code should import each module by its full package name.
 
@@ -103,7 +112,7 @@ But if you're trying to convert all elements of an iterable into a specific type
 ```python
 all_str = map(str, some_iterable)
 ```
-Always attempt to use comprehension constructs when possible
+Always attempt to use comprehension constructs when possible.
 
 ### Principal of least privilege and simplicity
 
@@ -128,7 +137,8 @@ Keep in mind that
 <!-- ### The little differences
 
  - Prefer tuples over lists (unless lists are required or in an asynchronous context).
- - Try not to catch general exceptions -->
+ - Try not to catch general exceptions
+-->
 
 ### Conclusion
 
