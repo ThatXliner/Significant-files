@@ -39,7 +39,7 @@ While, Pylint will cover this, also try to follow the [naming-cheetsheet](https:
  - Use `from x import y` where `x` is the package prefix and `y` is the module name with no prefix.
  - Use `from x import y as z` if two modules named `y` are to be imported or if `y` is an inconveniently long name.
  - Use `import y as z` only when `z` is a standard abbreviation (e.g., np for `numpy`).
- - Use `from . import submodule, other_submodule` (as opposed to `from package_name import submodule, other_submodule`) for importing submodules relative to the current directory/package.
+ - ~~Use `from . import submodule, other_submodule` (as opposed to `from package_name import submodule, other_submodule`) for importing submodules relative to the current directory/package.~~ Use absolute (e.g. `from package_name import utils`) imports unless project structure is deep and complex. This allows for many things such as [namespace packages](https://packaging.python.org/guides/packaging-namespace-packages/). See [this SO question](https://stackoverflow.com/questions/4209641/absolute-vs-explicit-relative-import-of-python-module)
 
 For example the module `sound.effects.echo` may be imported as follows:
 
