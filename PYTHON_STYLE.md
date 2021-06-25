@@ -22,7 +22,7 @@ Use `...` for code that will be filled in later.
 Use `pass` for everything else (e.g. abstract methods, type stubs, etc).
 
 ### Comment/docstrings
-Use [NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) unless you're documenting utility code or modules.
+Use [Google-style docstrings](https://google.github.io/styleguide/pyguide.html#381-docstrings) unless you're documenting utility code or modules.
 
 For utility code, try to keep the docstrings short (i.e. only describing what it does).
 
