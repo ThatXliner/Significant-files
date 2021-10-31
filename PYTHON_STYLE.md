@@ -34,6 +34,7 @@ While, Pylint will cover this, also try to follow the [naming-cheetsheet](https:
 
 ### Import style
 
+TL;DR: Use absolute imports. Other decisions should be obvious.
 
  - Use `import x` for importing packages and modules.
  - Use `from x import y` where `x` is the package prefix and `y` is the module name with no prefix.
@@ -87,10 +88,10 @@ Embed type hints in the code if possible
 
 ### Lambdas, higher-order functions, and comprehension constructs
 
-Always prefer a comprehension construct (i.e. list comprehensions, dictionary comprehensions, etc.) **unless**:
+Always prefer a comprehension construct (e.g. list comprehensions, dictionary comprehensions, etc.) **unless**:
 
  - You are converting every element of a iterable into a specific type (then you should use `map(type_constructor, iterable)`)
- - You are requiring to use `functools.reduce` (that is one of the rare cases lambdas should be used)
+ - You are required to use `functools.reduce`, etc (that is one of the rare cases lambdas should be used)
 
 Otherwise, most cases where `lambda`s and `map` are present can usually be replaced with a cleaner list comprehension.
 
