@@ -146,7 +146,7 @@ Keep in mind that
 Recommended formatters and linters
 
  - [`Black`][1]
- - [`Isort`][2] (with `profile=black`)
+ - [`Isort`][2] (with `--profile=black`)
  - [`Pylint`][3] (with default configuration)
 
 [1]: https://github.com/psf/black
