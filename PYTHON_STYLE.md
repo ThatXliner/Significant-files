@@ -99,12 +99,12 @@ For example, you can convert this:
 
 ```python
 add_1 = list(map(lambda x: x + 1, range(10)))
-only_even = list(filter(lambda x: x % 2 ==0, add_1))
+only_even = list(filter(lambda x: x % 2 == 0, add_1))
 ```
 to
 ```python
 add_1 = [x + 1 for x in range(10)]
-only_even = [x for x in add_1 if x % 2 ==0]
+only_even = [x for x in add_1 if x % 2 == 0]
 ```
 &#x1F631;
 
