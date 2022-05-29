@@ -30,7 +30,7 @@ For modules, give one line of brief description and (optionally) other lines of 
 
 ### Name style
 
-While Pylint will cover this, also try to follow the [naming-cheetsheet](https://github.com/tigthor/naming-cheatsheet) guide.
+While Pylint will cover this, also try to follow the [naming cheatsheet](https://github.com/kettanaito/naming-cheatsheet) guide.
 
 ### Import style
 
