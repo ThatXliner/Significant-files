@@ -11,9 +11,10 @@ This code style is designed to be super short and concise yet still allowing spa
 Prefer string interpolation styles in the following order:
 
 1. f-strings
-2. `str.format` method
-3. C-style string interpolation
-4. Binary string concatenation
+2. Binary string concatenation
+3. `str.format` method
+4. C-style string interpolation
+
 
 ### Filler statements
 
